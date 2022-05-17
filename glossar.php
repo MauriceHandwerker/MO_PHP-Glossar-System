@@ -1,36 +1,75 @@
 <?php
+class TableRows extends RecursiveIteratorIterator {
+  function __construct($it) {
+    parent::__construct($it, self::LEAVES_ONLY);
+  }
 
-include 'connection.php';
+  function current() {
+    return "<td> <p>" . parent::current(). "</p> </td>";
+  }
 
+  function beginChildren() {
+    echo "<tr>";
+  }
+
+  function endChildren() {
+    echo "</tr>" . "<br>";
+  }
+}
 ?>
 
 <!DOCKYPE html>
 <html>
-    <h1>Glossar<h1>
 
-    <section class="tables">
-        <table>
-            <tr>
-                <th>Letter</th>
-                <th>Name</th>
-                <th>Description</th>
-            <tr>
-        <?php
-            $sql = "SELECT letter, name, description FROM glossary";
-            $result = $conn->query($sql);
+	<head>
+		<link rel="stylesheet" href="css/glossar.css">
+		<link rel="stylesheet" href="css/nav.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	
+	<body>
 
-            if ($result->num_rows > 0) {
-            // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "  <td>". $row["letter"]. "</td>";
-                    echo "  <td>". $row["name"]. "</td>";
-                    echo "  <td>". $row["description"]. "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "0 results";
-            }
-        ?>
-    </section>
+		<section class="nav">
+            <nav id="1">
+                <a href="index.html">Home</a>
+                <a href="glossar.php">Glossar</a>
+                <a href="#bio">Bio</a>
+                <a href="#skills">Skills</a>
+                <a href="index.html#time-line">Time-Line</a>
+                <a href="#dokus">Doku's</a>
+            </nav>
+        </section>
+
+	
+		<h1>Glossar</h1>
+
+		
+
+		<table>
+		<tr>
+			<th>Letter</th>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		<br>
+			<?php
+
+				$stmt = $conn->prepare("SELECT letter, name, description FROM input");
+				$stmt->execute();
+
+				// set the resulting array to associative
+				$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+				foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+					echo $v;
+				}
+				$conn = null;
+				echo "</table>";
+			?>
+		</table>
+	
+
+		<footer>
+
+		</footer>
+	</body>
 </html>
