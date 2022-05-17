@@ -46,6 +46,17 @@ class TableRows extends RecursiveIteratorIterator {
 	
 		<h1>Glossar</h1>
 
+		<details>
+			<summary>Upload Data</summary>
+			<form action="input.php" method="POST">
+				<input type="text" placeholder="Buchstabe" size="1" name="letter" class="txt1">
+				<input type="text" placeholder="Name" name="name" class="txt2"> 
+				<br>
+				<input type="text" placeholder="Beschreibung" rows="5" cols="70" name="description" class="txt3">
+				<br>
+				<input type="submit" placeholder="Upload" name="submit">
+			</form>
+		</details>
 		
 
 		<table>
