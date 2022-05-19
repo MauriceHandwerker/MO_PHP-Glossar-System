@@ -5,11 +5,10 @@ include "connect.php";
 try {
     if(isset($_POST['submit']))
     {
-        $letter = $_POST['letter'];
         $name = $_POST['name'];
         $description = $_POST['description'];
 
-        $sql_insert = "INSERT INTO input (letter, name, description) VALUES ('$letter', '$name', '$description');";
+        $sql_insert = "INSERT INTO input (name, description) VALUES ('$name', '$description');";
         $conn->exec($sql_insert);
     }   
 

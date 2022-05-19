@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap');
+
 .nav{
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: black;
     min-width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    font-family: 'Roboto Mono';
 }
 
 
@@ -17,17 +19,20 @@ a{
 
 a:link{
     color: white;
+    text-decoration: none;
 }
 
 a:visited{
     color: white;
-    text-decoration: overline;
+    text-decoration: none;
 }
 
 a:hover{
     color: blue;
+    text-decoration: none;
 }
 
 a:active{
     color: white;
+    text-decoration: none;
 }

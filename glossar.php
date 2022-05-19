@@ -28,6 +28,8 @@ class TableRows extends RecursiveIteratorIterator {
 		<link rel="stylesheet" href="css/glossar.css">
 		<link rel="stylesheet" href="css/nav.css">
 		<link rel="stylesheet" href="css/style.css">
+
+		<title>M.Handwerker Glossar</title>
 	</head>
 	
 	<body>
@@ -36,40 +38,42 @@ class TableRows extends RecursiveIteratorIterator {
             <nav id="1">
                 <a href="index.html">Home</a>
                 <a href="glossar.php">Glossar</a>
-                <a href="#bio">Bio</a>
-                <a href="#skills">Skills</a>
+                <a href="index.html#bio">Bio</a>
+                <a href="index.html#skills">Skills</a>
                 <a href="index.html#time-line">Time-Line</a>
-                <a href="#dokus">Doku's</a>
+                <a href="index.html#doku">Doku's</a>
             </nav>
         </section>
 
 	
 		<h1>Glossar</h1>
 
-		<details>
-			<summary>Upload Data</summary>
-			<form action="input.php" method="POST">
-				<input type="text" placeholder="Buchstabe" size="1" name="letter" class="txt1">
-				<input type="text" placeholder="Name" name="name" class="txt2"> 
-				<br>
-				<input type="text" placeholder="Beschreibung" rows="5" cols="70" name="description" class="txt3">
-				<br>
-				<input type="submit" placeholder="Upload" name="submit">
-			</form>
-		</details>
+		<center>
+			<details>
+				<summary>Upload Data</summary>
+				<form action="input.php" method="POST">
+					<input type="text" placeholder="Name" name="name" class="txt"> 
+					<br>
+					<input type="text" placeholder="Beschreibung" name="description" class="txt">
+					<br>
+					<input type="submit" placeholder="Upload" name="submit">
+				</form>
+			</details>
+		</center>
+		
 		
 
 		<table>
 		<tr>
-			<th>Letter</th>
 			<th>Name</th>
 			<th>Description</th>
 		</tr>
 		<br>
 			<?php
 
-				$stmt = $conn->prepare("SELECT letter, name, description FROM input");
+				$stmt = $conn->prepare("SELECT * FROM input ORDER BY name ASC;");
 				$stmt->execute();
+
 
 				// set the resulting array to associative
 				$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

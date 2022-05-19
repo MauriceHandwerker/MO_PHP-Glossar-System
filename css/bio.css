@@ -1,0 +1,46 @@
+.bio {
+    margin: 0;
+    padding: 0;
+
+}
+
+.bio h1 {
+    font-size: 60px;
+    line-height: 100px;
+
+    transition: 00.04s;
+}
+
+.bio h1:hover {
+    color: greenyellow;
+    font-size: 70px;
+}
+
+.bio-container {
+    width: 80%;
+    height: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.block-1 {
+    max-width: 350px;
+    text-align: left;
+}
+
+.block-2 {
+    position: absolute;
+    margin-left: 400px;
+    bottom: 0;
+}
+
+.block-2 img {
+    height: 220px;
+    width: 180px;
+}
+
+.block-2:hover {
+    
+}
