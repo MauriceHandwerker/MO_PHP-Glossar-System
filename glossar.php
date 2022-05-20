@@ -26,25 +26,11 @@ class TableRows extends RecursiveIteratorIterator {
 
 	<head>
 		<link rel="stylesheet" href="css/glossar.css">
-		<link rel="stylesheet" href="css/nav.css">
-		<link rel="stylesheet" href="css/style.css">
 
-		<title>M.Handwerker Glossar</title>
+		<title>MO PHP Glossar System</title>
 	</head>
 	
 	<body>
-
-		<section class="nav">
-            <nav id="1">
-                <a href="index.html">Home</a>
-                <a href="glossar.php">Glossar</a>
-                <a href="index.html#bio">Bio</a>
-                <a href="index.html#skills">Skills</a>
-                <a href="index.html#time-line">Time-Line</a>
-                <a href="index.html#doku">Doku's</a>
-            </nav>
-        </section>
-
 	
 		<h1>Glossar</h1>
 
@@ -54,7 +40,7 @@ class TableRows extends RecursiveIteratorIterator {
 				<form action="input.php" method="POST">
 					<input type="text" placeholder="Name" name="name" class="txt"> 
 					<br>
-					<input type="text" placeholder="Beschreibung" name="description" class="txt">
+					<input type="text" placeholder="Description" name="description" class="txt">
 					<br>
 					<input type="submit" placeholder="Upload" name="submit">
 				</form>
@@ -71,7 +57,7 @@ class TableRows extends RecursiveIteratorIterator {
 		<br>
 			<?php
 
-				$stmt = $conn->prepare("SELECT * FROM input ORDER BY name ASC;");
+				$stmt = $conn->prepare("SELECT * FROM main_glossary ORDER BY name ASC;");
 				$stmt->execute();
 
 
