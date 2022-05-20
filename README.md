@@ -2,6 +2,8 @@
 With the MO_PHP-Glossar-System you have a simple list of data that is sorted by alphabet.
 The MO_PHP-Glossar-System has only the minimum of CSS embeded.
 
+The MO_PHP-Glossar-System uses the <a href="LICENSE">Apache 2.0 License</a>
+
 
 ## About MO_PHP-Glossar-System
 ### SQL Server
