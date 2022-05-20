@@ -8,7 +8,7 @@ try {
         $name = $_POST['name'];
         $description = $_POST['description'];
 
-        $sql_insert = "INSERT INTO input (name, description) VALUES ('$name', '$description');";
+        $sql_insert = "INSERT INTO main_glossary (name, description) VALUES ('$name', '$description');";
         $conn->exec($sql_insert);
     }   
 
