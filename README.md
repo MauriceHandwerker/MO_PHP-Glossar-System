@@ -1,4 +1,4 @@
-# PHP-Glossar
+# MO_PHP-Glossar-System
 With the MO_PHP-Glossar-System you have a simple list of data that is sorted by alphabet.
 The MO_PHP-Glossar-System has only the minimum of CSS embeded.
 
